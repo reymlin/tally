@@ -1,0 +1,39 @@
+.welcom{
+    width: 100%;
+    height: 100vh;
+    background: var(--welcom-bg);
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0 62px 0;
+    display: flex;
+    flex-direction: column;
+    .jump{
+        color: var(--font-color1);
+        outline: none;
+        background: none; 
+        border: 0; 
+        position: absolute;
+        right: 16px;
+        top: 16px;
+        font-size: 32px; 
+    }
+    header{
+        font-size: 32px;  
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        p{
+            width: 100%;
+            color: var(--font-color2);
+            text-align: center;
+        }
+    }
+    .wrapper{
+        flex: 1;
+        margin-top: 32px;
+        margin-left: 16px;
+        margin-right: 16px;
+        border-radius: 16PX;
+        background: var(--welcom-wrapper-bg);
+    }
+}
