@@ -7,6 +7,7 @@ import {Welcom1} from '../views/welcom/welcom1'
 import {Welcom2} from '../views/welcom/welcom2'
 import {Welcom3} from '../views/welcom/welcom3'
 import {Welcom4} from '../views/welcom/welcom4'
+import {Start}from '../views/start/index'
 const Routes = [
     { path: '/login', component: Login },
     { path: '/404', component: Page404 },
@@ -41,6 +42,10 @@ const Routes = [
             }
         ]
     },
+    {
+        path:'/start',
+        component:Start
+    }
    
 ]
 
