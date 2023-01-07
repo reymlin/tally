@@ -1,10 +1,10 @@
 .welcom{
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background: var(--welcom-bg);
     position: relative;
     overflow: hidden;
-    padding: 100px 0 62px 0;
+    padding: 100px 16px 62px 16px;
     display: flex;
     flex-direction: column;
     .jump{
@@ -15,7 +15,7 @@
         position: absolute;
         right: 16px;
         top: 16px;
-        font-size: 32px; 
+        font-size: 26px; 
     }
     header{
         font-size: 32px;  
@@ -28,12 +28,11 @@
             text-align: center;
         }
     }
-    .wrapper{
+    .wrapper{ 
         flex: 1;
-        margin-top: 32px;
-        margin-left: 16px;
-        margin-right: 16px;
-        border-radius: 16PX;
+        margin-top: 32px; 
+        border-radius: 16px;
         background: var(--welcom-wrapper-bg);
+        overflow: auto;
     }
 }
