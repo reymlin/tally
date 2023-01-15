@@ -4,9 +4,9 @@
     background: var(--welcom-bg);
     position: relative;
     overflow: hidden;
-    padding: 100px 16px 62px 16px;
-    display: flex;
-    flex-direction: column;
+    // padding: 100px 16px 62px 16px;
+    // display: flex;
+    // flex-direction: column;
     .jump{
         color: var(--font-color1);
         outline: none;
@@ -22,6 +22,7 @@
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
+        margin-top: 100px;
         p{
             width: 100%;
             color: var(--font-color2);
@@ -29,10 +30,57 @@
         }
     }
     .wrapper{ 
-        flex: 1;
+        height: calc(100% - 112px);
+        // div{
+        //     height: 100%;
+        //     background: yellow;
+        //     overflow-y: auto;
+        //     p{
+        //         display: block;
+        //         width: 50%;
+        //         background: #000;
+        //         height: 1000px;
+        //     }
+        // }
+        
+             
+        // flex: 1;
         margin-top: 32px; 
+        // width: 100%;
+        height: calc(100% - 112px - 32px - 62px - 100px); 
         border-radius: 16px;
-        background: var(--welcom-wrapper-bg);
-        overflow: auto;
-    }
+        display: flex;
+        justify-content: center;
+        >div{ 
+            display: block;
+            width: calc(100% - 32px);
+            height: 100%; 
+            border-radius: 16px;
+            overflow: auto;  
+            background: var(--welcom-wrapper-bg);    
+        }
+    }  
+}
+.enter_active {
+    transition: all .3s ease-out;
+}
+
+.leave_active {
+    transition: all 3s cubic-bezier(1, 0.5, 0.8, 1);
+    position: absolute;
+    left: -100vw;
+    top: 0;
+}
+
+.enter_from,
+.leave_to { 
+    opacity: 0;
+}
+
+.leave_to {
+    transform: translateX(-100vw);
+}
+
+.enter_from {
+    transform: translateX(100vw);
 }
