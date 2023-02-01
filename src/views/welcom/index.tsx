@@ -1,12 +1,32 @@
 import {defineComponent,Transition,VNode }from 'vue'
 import S from './welcom.module.scss'
 import logo from '../../assets/logo.svg'
-import {RouterView,useRouter,RouteLocationNormalizedLoaded} from 'vue-router'
+import {RouterView,useRouter,useRoute,RouteLocationNormalizedLoaded} from 'vue-router'
 export const WelcomIndex = defineComponent({
     setup(){
         const router = useRouter()
+        const curentRouter = useRoute() 
         const onJump = () => {
             router.push('/start')
+        }
+
+        const toNextPage = () => {
+            switch(curentRouter.path){
+                case '/welcom/1':
+                    router.push('/welcom/2');
+                    break;
+                case '/welcom/2':
+                    router.push('/welcom/3');
+                    break;
+                case '/welcom/3':
+                    router.push('/welcom/4');
+                    break;
+                case '/welcom/4':
+                    router.push('/start');
+                    break;
+                default:
+                    break;
+            }
         }
 
         return () => 
@@ -14,7 +34,7 @@ export const WelcomIndex = defineComponent({
             <button class={S.jump} onClick={onJump}>跳过</button>
             <header>
                 <img src={logo} alt="" />
-                <p>某某记账</p>
+                <p>省钱助手</p>
             </header> 
             <div class={S.wrapper}> 
                 <RouterView>
@@ -29,7 +49,11 @@ export const WelcomIndex = defineComponent({
                         </Transition>
                     )}
                 </RouterView>   
-            </div>
+            </div> 
+
+            <footer>
+                <button onClick={toNextPage}>下一页</button>
+            </footer>
         </div>
     }
 })
