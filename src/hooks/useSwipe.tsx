@@ -33,7 +33,8 @@ export const useSwipe = (element: Ref<HTMLElement | undefined>) => {
 
         ele.addEventListener('touchmove', onTouchmove);
 
-        ele.addEventListener('touchend', onTouchend);
+        ele.addEventListener('touchend', onTouchend); 
+      
     });
 
     const onTochstart = (e: TouchEvent) => {

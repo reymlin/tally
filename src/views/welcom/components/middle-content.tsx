@@ -16,6 +16,10 @@ export const MiddleContent = defineComponent({
 
         const mainEle = ref<HTMLElement>();
         const { swiping, direction } = useSwipe(mainEle);
+      
+        const toNextPage = () => {
+            console.log('下一页',path); 
+        }
  
         watchEffect(() => { 
             if(swiping.value){
@@ -33,7 +37,8 @@ export const MiddleContent = defineComponent({
             <img src={img} alt="" />
             <p>{title1}</p>
             <p>{title2}</p> 
-            <RouterLink to={path}>下一页</RouterLink> 
+            {/* <RouterLink to={path}>下一页</RouterLink>  */}
+            <button onClick={toNextPage} >下一页</button>
         </div>
     }
 })
