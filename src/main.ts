@@ -1,7 +1,9 @@
-import { createApp } from 'vue' 
-import {App} from './App'
- import {Router} from './router/index'
- import {setDomFontSize} from './utils/resize'
 
- setDomFontSize()
-createApp(App).use(Router).mount('#app')
+import {App} from './App'
+import { createApp } from 'vue' 
+import {createPinia} from 'pinia'
+import {Router} from './router/index'
+import {setDomFontSize} from './utils/resize'
+setDomFontSize()
+const pinia = createPinia()
+createApp(App).use(Router).use(pinia).mount('#app')

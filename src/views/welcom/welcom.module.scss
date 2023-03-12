@@ -61,22 +61,38 @@
     transition: all .3s ease-out;
 }
 
-.leave_active {
+
+.enter_from_right,
+.leave_to_right ,
+.leave_to_left,
+.enter_from_left{ 
+    opacity: 0;
+}
+
+// 向右滑动（默认）
+.leave_to_right {
+    transform: translateX(-100vw);
+}
+.enter_from_right {
+    transform: translateX(100vw);
+} 
+.leave_active_right {
     transition: all 3s cubic-bezier(1, 0.5, 0.8, 1);
     position: absolute;
     left: -100vw;
     top: 0;
 }
 
-.enter_from,
-.leave_to { 
-    opacity: 0;
+// 向左滑动
+.leave_to_left {
+    transform: translateX(100vw);
 }
-
-.leave_to {
+.enter_from_left{
     transform: translateX(-100vw);
 }
-
-.enter_from {
-    transform: translateX(100vw);
+.leave_active_left {
+    transition: all 3s cubic-bezier(1, 0.5, 0.8, 1);
+    position: absolute;
+    right: -100vw;
+    top: 0;
 }

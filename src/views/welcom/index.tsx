@@ -1,11 +1,16 @@
-import {defineComponent,Transition,VNode }from 'vue'
-import S from './welcom.module.scss'
-import logo from '../../assets/logo.svg'
-import {RouterView,useRouter,useRoute,RouteLocationNormalizedLoaded} from 'vue-router'
+
+import S from './welcom.module.scss' 
+import classNames from 'classnames'
+import logo from '../../assets/logo.svg' 
+import { WelcomStore } from '../../store/welcom'
+import { defineComponent, Transition, VNode ,ref} from 'vue'
+import { RouterView, useRouter, useRoute, RouteLocationNormalizedLoaded } from 'vue-router'
 export const WelcomIndex = defineComponent({
     setup(){
         const router = useRouter()
         const curentRouter = useRoute() 
+        const storeWelcom = WelcomStore() 
+
         const onJump = () => {
             router.push('/start')
         }
@@ -28,6 +33,29 @@ export const WelcomIndex = defineComponent({
                     break;
             }
         }
+ 
+
+        let fromClassName :any = null
+        let leveToClassName:any = null
+        let leaveActiveClassName:any = null
+ 
+        // 订阅Pinia仓库中的State状态
+        const subscribe = storeWelcom.$subscribe((state) =>{ 
+            let _direc :string = (state.events as any)[0]?.newValue || ''; 
+           
+            if(_direc === 'left'){ 
+                fromClassName = classNames(S.enter_from_right) 
+                leveToClassName =  classNames(S.leave_to_right) 
+                leaveActiveClassName =  classNames(S.leave_active_right)  
+            }else if(_direc === 'right'){ 
+                fromClassName = classNames(S.enter_from_left) 
+                leveToClassName =  classNames(S.leave_to_left) 
+                leaveActiveClassName =  classNames(S.leave_active_left) 
+            } 
+            
+        //detached值默认false，如果设置detached值为 true 时，即使所在组件被卸载，订阅依然在生效
+        }, { detached: false })
+       
 
         return () => 
         <div class={S.welcom}>
@@ -40,10 +68,10 @@ export const WelcomIndex = defineComponent({
                 <RouterView>
                     {({ Component: X, route: R }:  { Component: VNode; route: RouteLocationNormalizedLoaded }) => (
                         <Transition
-                            enterFromClass={S.enter_from}
                             enterActiveClass={S.enter_active}
-                            leaveToClass={S.leave_to}
-                            leaveActiveClass={S.leave_active}
+                            enterFromClass={fromClassName}
+                            leaveToClass={leveToClassName}
+                            leaveActiveClass={leaveActiveClassName}
                         >
                             {X}
                         </Transition>
