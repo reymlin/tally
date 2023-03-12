@@ -12,5 +12,5 @@ export const setDomFontSize = () => {
     (document.getElementsByTagName('html')[0].style )['font-size'] = fontsize;
 }
   
-  let setDomFontSizeDebounce = onDebounceFn(setDomFontSize)
-  window.addEventListener('resize', setDomFontSizeDebounce); // 浏览器加入收缩监听防抖，重新计算rem配置
+let setDomFontSizeDebounce = onDebounceFn(setDomFontSize,100)
+window.addEventListener('resize', setDomFontSizeDebounce); // 浏览器加入收缩监听防抖，重新计算rem配置
