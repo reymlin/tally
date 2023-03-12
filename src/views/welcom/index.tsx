@@ -40,8 +40,8 @@ export const WelcomIndex = defineComponent({
         let leaveActiveClassName:any = null
  
         // 订阅Pinia仓库中的State状态
-        const subscribe = storeWelcom.$subscribe((state) =>{ 
-            let _direc :string = (state.events as any)[0]?.newValue || ''; 
+        const subscribe = storeWelcom.$subscribe((state:any) =>{
+            let _direc :string = state?.payload?.slide_direc || ''; 
            
             if(_direc === 'left'){ 
                 fromClassName = classNames(S.enter_from_right) 
