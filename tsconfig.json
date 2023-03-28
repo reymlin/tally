@@ -12,8 +12,15 @@
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
     "noEmit": true, 
-    "allowJs": true
+    "allowJs": true,
+    "baseUrl":".",
+    "paths": { 
+      "@/*": [
+        "src/*"
+      ]
+    },
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/utils/resize.js" ], 
-  "references": [{ "path": "./tsconfig.node.json" }] 
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx","src/**/*.jsx", "src/**/*.vue", "src/utils/resize.js"], 
+  "references": [{ "path": "./tsconfig.node.json" }] ,
+
 }

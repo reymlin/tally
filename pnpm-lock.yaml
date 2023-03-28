@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@types/node': ^18.15.10
   '@vitejs/plugin-vue': ^4.0.0
   '@vitejs/plugin-vue-jsx': ^3.0.0
   autoprefixer: ^10.4.13
@@ -22,6 +23,7 @@ dependencies:
   vue-router: 4.1.6_vue@3.2.45
 
 devDependencies:
+  '@types/node': 18.15.10
   '@vitejs/plugin-vue': 4.0.0_vite@4.0.3+vue@3.2.45
   '@vitejs/plugin-vue-jsx': 3.0.0_vite@4.0.3+vue@3.2.45
   autoprefixer: 10.4.13
@@ -29,7 +31,7 @@ devDependencies:
   prettier: 2.8.1
   sass: 1.57.1
   typescript: 4.9.4
-  vite: 4.0.3_sass@1.57.1
+  vite: 4.0.3_@types+node@18.15.10+sass@1.57.1
   vue-tsc: 1.0.19_typescript@4.9.4
 
 packages:
@@ -560,6 +562,10 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
+  /@types/node/18.15.10:
+    resolution: {integrity: sha512-9avDaQJczATcXgfmMAW3MIWArOO7A+m90vuCFLr8AotWf8igO/mRoYukrk2cqZVtv38tHs33retzHEilM7FpeQ==}
+    dev: true
+
   /@vitejs/plugin-vue-jsx/3.0.0_vite@4.0.3+vue@3.2.45:
     resolution: {integrity: sha512-vurkuzgac5SYuxd2HUZqAFAWGTF10diKBwJNbCvnWijNZfXd+7jMtqjPFbGt7idOJUn584fP1Ar9j/GN2jQ3Ew==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -570,7 +576,7 @@ packages:
       '@babel/core': 7.20.7
       '@babel/plugin-transform-typescript': 7.20.7_@babel+core@7.20.7
       '@vue/babel-plugin-jsx': 1.1.1_@babel+core@7.20.7
-      vite: 4.0.3_sass@1.57.1
+      vite: 4.0.3_@types+node@18.15.10+sass@1.57.1
       vue: 3.2.45
     transitivePeerDependencies:
       - supports-color
@@ -583,7 +589,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.0.3_sass@1.57.1
+      vite: 4.0.3_@types+node@18.15.10+sass@1.57.1
       vue: 3.2.45
     dev: true
 
@@ -1289,7 +1295,7 @@ packages:
       picocolors: 1.0.0
     dev: true
 
-  /vite/4.0.3_sass@1.57.1:
+  /vite/4.0.3_@types+node@18.15.10+sass@1.57.1:
     resolution: {integrity: sha512-HvuNv1RdE7deIfQb8mPk51UKjqptO/4RXZ5yXSAvurd5xOckwS/gg8h9Tky3uSbnjYTgUm0hVCet1cyhKd73ZA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -1314,6 +1320,7 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 18.15.10
       esbuild: 0.16.12
       postcss: 8.4.20
       resolve: 1.22.1
