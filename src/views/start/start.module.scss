@@ -1,9 +1,23 @@
 
+$space:16px;
 .btn_wrapper{
     width: 100%;
-    padding: 0 16px;
+    height: 100%;
+    padding: $space;
+    position: relative;
+}
+.piggBox{ 
+    display: flex;
+    justify-content: center;
+    margin-top: 25%;
 }
 .btn{
     width: 100%; 
     font-size: 18px;
+    margin-top: 30%;
+}
+.floatAddIcon{
+    position: absolute;
+    right: $space;
+    bottom: $space;
 }

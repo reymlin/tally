@@ -1,0 +1,14 @@
+.imgBox{
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background:var(--button-bgc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+        width: 63%;
+        height: 63%;
+        color: var(--button-text);
+    }
+}
