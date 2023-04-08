@@ -1,4 +1,4 @@
-import { ref, Ref, onMounted, computed, onUnmounted } from 'vue';
+import { ref, Ref, onMounted, computed, onUnmounted } from "vue";
 
 type Point = { x: number; y: number };
 export const useSwipe = (element: Ref<HTMLElement | undefined>) => {
@@ -17,9 +17,9 @@ export const useSwipe = (element: Ref<HTMLElement | undefined>) => {
         if (!distance.value) return;
         const { x, y } = distance.value;
         if (Math.abs(x) > Math.abs(y)) {
-            return x > 0 ? 'right' : 'left';
+            return x > 0 ? "right" : "left";
         } else {
-            return y > 0 ? 'down' : 'up';
+            return y > 0 ? "down" : "up";
         }
     });
 
@@ -29,12 +29,11 @@ export const useSwipe = (element: Ref<HTMLElement | undefined>) => {
         ele = element?.value;
         if (!ele) return;
 
-        ele.addEventListener('touchstart', onTochstart);
+        ele.addEventListener("touchstart", onTochstart);
 
-        ele.addEventListener('touchmove', onTouchmove);
+        ele.addEventListener("touchmove", onTouchmove);
 
-        ele.addEventListener('touchend', onTouchend); 
-      
+        ele.addEventListener("touchend", onTouchend);
     });
 
     const onTochstart = (e: TouchEvent) => {
@@ -62,9 +61,9 @@ export const useSwipe = (element: Ref<HTMLElement | undefined>) => {
 
     onUnmounted(() => {
         if (!ele) return;
-        ele.removeEventListener('touchstart', onTochstart);
-        ele.removeEventListener('touchmove', onTouchmove);
-        ele.removeEventListener('touchend', onTouchend);
+        ele.removeEventListener("touchstart", onTochstart);
+        ele.removeEventListener("touchmove", onTouchmove);
+        ele.removeEventListener("touchend", onTouchend);
     });
 
     return { swiping, distance, direction };

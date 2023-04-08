@@ -1,18 +1,18 @@
-import {defineComponent}from 'vue'
-import S from './floatButton.module.scss'
-export const FloatButton = defineComponent({ 
+import { defineComponent } from "vue";
+import S from "./floatButton.module.scss";
+export const FloatButton = defineComponent({
     props: {
         path: {
             type: String,
-            default: () =>  '',
+            default: () => "",
             require: false
-        },
-    }, 
-    setup(props,context){
+        }
+    },
+    setup(props, context) {
         return () => (
-            <div class={S.imgBox} > 
-                <img src={ props.path } alt="" /> 
+            <div class={S.imgBox}>
+                <img src={props.path} alt="" />
             </div>
-        )
+        );
     }
-})
+});

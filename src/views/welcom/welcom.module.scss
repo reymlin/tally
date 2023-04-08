@@ -1,4 +1,4 @@
-.welcom{
+.welcom {
     width: 100%;
     height: 100%;
     background: var(--welcom-bg);
@@ -7,65 +7,64 @@
     padding-top: 100px;
     display: flex;
     flex-direction: column;
-    .jump{
+    .jump {
         color: var(--font-color1);
         outline: none;
-        background: none; 
-        border: 0; 
+        background: none;
+        border: 0;
         position: absolute;
         right: 16px;
         top: 16px;
-        font-size: 32px; 
+        font-size: 32px;
     }
-    header{
-        font-size: 32px;  
+    header {
+        font-size: 32px;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        p{
+        p {
             width: 100%;
             color: var(--font-color2);
             text-align: center;
         }
     }
-    .wrapper{
+    .wrapper {
         flex: 1;
         margin-top: 32px;
         border-radius: 16px;
-        >div{ 
+        > div {
             display: block;
             margin: auto;
             width: calc(100% - 40px);
-            height: 100%; 
+            height: 100%;
             border-radius: 16px;
-            overflow: auto;  
-            background: var(--welcom-wrapper-bg);    
+            overflow: auto;
+            background: var(--welcom-wrapper-bg);
         }
-    }  
-    footer{
+    }
+    footer {
         display: flex;
         justify-content: flex-end;
         width: 100%;
         height: 100px;
-        button{
+        button {
             padding: 0 20px;
             outline: 0;
             border: 0;
             background: none;
             font-size: 32px;
-            color: var( --font-color1);
+            color: var(--font-color1);
         }
     }
 }
 .enter_active {
-    transition: all .3s ease-out;
+    transition: all 0.3s ease-out;
 }
 
-
 .enter_from_right,
-.leave_to_right ,
+.leave_to_right,
 .leave_to_left,
-.enter_from_left{ 
+.enter_from_left {
     opacity: 0;
 }
 
@@ -75,7 +74,7 @@
 }
 .enter_from_right {
     transform: translateX(100vw);
-} 
+}
 .leave_active_right {
     transition: all 3s cubic-bezier(1, 0.5, 0.8, 1);
     position: absolute;
@@ -87,7 +86,7 @@
 .leave_to_left {
     transform: translateX(100vw);
 }
-.enter_from_left{
+.enter_from_left {
     transform: translateX(-100vw);
 }
 .leave_active_left {
