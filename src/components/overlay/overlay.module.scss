@@ -1,0 +1,16 @@
+.leftbox {
+    position: fixed;
+    left: 0;
+    top: 20px;
+    background: #f00;
+    width: 70%;
+    height: calc(100vh - 20px);
+}
+.rightMask {
+    position: fixed;
+    background: #00000080;
+    right: 0;
+    top: 20px;
+    width: 30%;
+    height: calc(100vh - 20px);
+}
