@@ -2,15 +2,61 @@
     position: fixed;
     left: 0;
     top: 20px;
-    background: #f00;
     width: 70%;
     height: calc(100vh - 20px);
+    box-sizing: border-box;
+    padding-top: var(--overlay-safe-top);
 }
 .rightMask {
     position: fixed;
     background: #00000080;
     right: 0;
-    top: 20px;
+    top: 0;
     width: 30%;
-    height: calc(100vh - 20px);
+    height: 100vh;
+}
+.overlayTop {
+    height: 128px;
+    background-color: var(--overlay-top-bgc);
+    padding-left: var(--overlay-safe-left);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    p {
+        width: 100%;
+    }
+}
+.userName {
+    font-size: 24px;
+    color: var(--font-color1);
+}
+.subtitle {
+    font-size: 16px;
+    color: var(--font-color2);
+    margin-top: 12px;
+}
+.navList {
+    padding-left: var(--overlay-safe-left);
+    height: calc(100% - var(--overlay-safe-top));
+    background-color: var(--nav-bgc);
+    box-sizing: border-box;
+    padding-top: 30px;
+    & > div {
+        display: flex;
+        height: 50px;
+        align-items: center;
+        p {
+            width: 34px;
+            height: 34px;
+            overflow: hidden;
+            img {
+                width: 100%;
+                max-height: 100%;
+            }
+        }
+        span {
+            font-size: 20px;
+            margin-left: 25px;
+        }
+    }
 }
