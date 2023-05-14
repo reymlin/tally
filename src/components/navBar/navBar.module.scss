@@ -1,25 +1,22 @@
-.navBarWrapper{
-    position: absolute;
-    left: 0;
-    top: 0;
+.navBarWrapper {
     width: 100%;
     height: var(--nav-bar-height);
     background: var(--nav-bar-bgc);
-    color:var(--nav-text);
+    color: var(--nav-text);
     display: flex;
     align-items: flex-end;
     padding-bottom: 14px;
     padding-left: 25px;
 }
-.icon{
+.icon {
     display: inline-block;
     width: 27px;
-    img{
+    img {
         width: 100%;
         max-height: 100%;
     }
 }
-.title{
+.title {
     margin-left: 22px;
     font-size: 24px;
 }

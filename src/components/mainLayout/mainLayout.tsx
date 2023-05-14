@@ -4,15 +4,15 @@ import { NavBar } from "@/components/navBar/navBar";
 export const MianLayout = defineComponent({
     setup(props, context: any) {
         return () => (
-            <>
+            <div class={S.mianWrapper}>
                 <NavBar>
                     {{
                         default: context.slots.title?.(),
                         icon: context.slots.icon?.()
                     }}
                 </NavBar>
-                {context?.slots?.main()}
-            </>
+                <div class={S.mainBody}>{context?.slots?.main()}</div>
+            </div>
         );
     }
 });
