@@ -7,8 +7,8 @@ export const MianLayout = defineComponent({
             <div class={S.mianWrapper}>
                 <NavBar>
                     {{
-                        default: context.slots.title?.(),
-                        icon: context.slots.icon?.()
+                        icon: context.slots.icon?.(),
+                        title: context.slots.title?.()
                     }}
                 </NavBar>
                 <div class={S.mainBody}>{context?.slots?.main()}</div>

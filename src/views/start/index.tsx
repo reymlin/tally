@@ -15,7 +15,7 @@ export const Start = defineComponent({
             <>
                 <MianLayout>
                     {{
-                        default: () => "省钱助手",
+                        title: () => "省钱助手",
                         icon: () => <img src={menuImg} />,
                         main: () => (
                             <div class={S.btn_wrapper}>

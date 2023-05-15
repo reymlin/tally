@@ -16,7 +16,7 @@ export const NavBar = defineComponent({
                     <span class={S.icon} onClick={changeVisible}>
                         {slots.icon?.()}
                     </span>
-                    <span class={S.title}>{slots.default?.()}</span>
+                    <span class={S.title}>{slots.title?.()}</span>
                 </div>
                 {overlayVisible.value ? <Overlay onClose={() => (overlayVisible.value = false)}></Overlay> : ""}
             </>
