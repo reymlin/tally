@@ -2,11 +2,11 @@
     // 每次保存的时候自动格式化
     "editor.formatOnSave": true,
     // 控制字体大小(像素)
-    "editor.fontSize": 18,
+    "editor.fontSize": 16,
     // 控制 Markdown 预览中使用的字号(以像素为单位)
-    "markdown.preview.fontSize": 18,
+    "markdown.preview.fontSize": 16,
     // 控制终端的字号(以像素为单位)。
-    "terminal.integrated.fontSize": 18,
+    "terminal.integrated.fontSize": 16,
     // 忽略“存储库中存在大量更改”的警告
     "git.ignoreLimitWarning": true,
     // 一个制表符等于的空格数。

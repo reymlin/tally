@@ -23,7 +23,7 @@ export const MianLayout = defineComponent({
         const { slots } = context;
 
         return () => (
-            <>
+            <div class={S.mainBody}>
                 <div class={S.topBar}>
                     <div class={S.imgBox}>{slots?.leftImg()}</div>
                     <div class={S.titleBox}>{slots?.title()}</div>
@@ -35,8 +35,8 @@ export const MianLayout = defineComponent({
                         </li>
                     ))}
                 </ul>
-                {slots?.main()}
-            </>
+                <div class={S.mainContent}>{slots?.main()}</div>
+            </div>
         );
     }
 });

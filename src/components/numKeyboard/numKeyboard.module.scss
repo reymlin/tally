@@ -1,0 +1,54 @@
+.numKeyboard {
+    width: 100%;
+    button {
+        outline: none;
+        border: none;
+        background: transparent;
+        font-size: 16px;
+    }
+}
+.BoardTop {
+    width: 100%;
+    display: flex;
+    border-top: 1px solid var(--digit-btn-border-color);
+    border-bottom: 1px solid var(--digit-btn-border-color);
+}
+.digitWrapper {
+    width: 100%;
+    display: flex;
+}
+.numberBox {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    button {
+        font-size: 16px;
+        height: var(--digit-btn-height);
+        width: 33.333%;
+        border-right: 1px solid var(--digit-btn-border-color);
+        border-bottom: 1px solid var(--digit-btn-border-color);
+    }
+}
+.digitFooter {
+    width: 100%;
+    button:nth-of-type(1) {
+        width: 66.666%;
+    }
+    button {
+        border-bottom: none;
+    }
+}
+
+.rightBox {
+    width: 110px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    button {
+        height: calc(var(--digit-btn-height) * 2);
+        width: 100%;
+        &:nth-of-type(1) {
+            border-bottom: 1px solid var(--digit-btn-border-color);
+        }
+    }
+}

@@ -4,6 +4,9 @@ import vueJsx from "@vitejs/plugin-vue-jsx";
 import path from "path"; // 解决报错：pnpm install @types/node -D
 export default defineConfig({
     base: "./",
+    server: {
+        host: true
+    },
     plugins: [
         vue(),
         // 引入插件vueJsx才能支持jsx语法
