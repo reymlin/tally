@@ -9,10 +9,37 @@
 }
 .BoardTop {
     width: 100%;
+    height: 56px;
     display: flex;
     border-top: 1px solid var(--digit-btn-border-color);
     border-bottom: 1px solid var(--digit-btn-border-color);
+    section {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        padding: 0 18px;
+        overflow: hidden;
+        img {
+            width: 32px;
+        }
+        .curday {
+            margin-left: 14px;
+            color: var(--gray-font-color);
+        }
+        input {
+            height: 100%;
+            width: 100%;
+            outline: none;
+            border: 0;
+            text-align: right;
+            background: none;
+            color: var(--input-color);
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
 }
+
 .digitWrapper {
     width: 100%;
     display: flex;
