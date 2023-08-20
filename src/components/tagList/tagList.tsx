@@ -1,6 +1,5 @@
 import { defineComponent, PropType } from "vue";
 import S from "./tagList.module.scss";
-import tagImg from "@/assets/imgs/tag.jpg";
 export const TagList = defineComponent({
     props: {
         tagType: {
@@ -8,7 +7,7 @@ export const TagList = defineComponent({
             default: () => ""
         },
         list: {
-            type: Array as PropType<{ label: string; value: string }[]>,
+            type: Array as PropType<{ label: string; value: string; img: string }[]>,
             default: () => []
         }
     },
@@ -24,7 +23,7 @@ export const TagList = defineComponent({
                     return (
                         <div class={S.itemTag}>
                             <p>
-                                <img src={tagImg} alt="" />
+                                <img src={item.img} alt="" />
                             </p>
                             <span>{item.label}</span>
                         </div>

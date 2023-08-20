@@ -1,6 +1,6 @@
 import { defineComponent, ref, watchEffect } from "vue";
 import S from "./numKeyboard.module.scss";
-import imgIcon from "@/assets/imgs/tag.jpg";
+import rili from "@/assets/createImgs/rili.png";
 import dayjs from "dayjs";
 
 export const NumKeyboard = defineComponent({
@@ -93,7 +93,7 @@ export const NumKeyboard = defineComponent({
             <div class={S.numKeyboard}>
                 <div class={S.BoardTop}>
                     <section>
-                        <img src={imgIcon} alt="" />
+                        <img src={rili} alt="" />
                         <span class={S.curday}>{curDay}</span>
                     </section>
                     <section>
