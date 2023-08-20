@@ -79,3 +79,41 @@
         }
     }
 }
+
+button {
+    position: relative;
+    overflow: hidden;
+    &:active {
+        color: var(--input-color);
+        &::after {
+            position: absolute;
+            width: 1%;
+            height: 1%;
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            content: "";
+            display: block;
+            pointer-events: none;
+            animation: animate 1s linear infinite;
+            background: var(--button-active-bgc);
+        }
+    }
+}
+@keyframes animate {
+    0% {
+        transform: scale(8);
+        opacity: 1;
+    }
+
+    50% {
+        width: 50%;
+        height: 50%;
+        transform: scale(20);
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

@@ -1,4 +1,4 @@
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref, watchEffect } from "vue";
 import S from "./numKeyboard.module.scss";
 import imgIcon from "@/assets/imgs/tag.jpg";
 import dayjs from "dayjs";
@@ -68,6 +68,26 @@ export const NumKeyboard = defineComponent({
         const onSubmit = () => {
             onClear();
         };
+
+        // 格式化用户输入的值
+        const formatInputValue = () => {
+            if (inputValue.value === ".") {
+                inputValue.value = "";
+            }
+            // 判断是否出现多个小数点，如果出现，则替换为空字符
+            let strs = inputValue.value.split(".");
+            if (strs.length > 2) {
+                inputValue.value = strs[0] + "." + strs[1];
+            }
+            // 判断是否出现多个0，如果出现，则替换为一个0
+            if (inputValue.value.length > 1 && inputValue.value[0] === "0" && inputValue.value[1] !== ".") {
+                inputValue.value = inputValue.value[0];
+            }
+        };
+
+        watchEffect(() => {
+            formatInputValue();
+        });
 
         return () => (
             <div class={S.numKeyboard}>
