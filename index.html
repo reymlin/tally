@@ -13,30 +13,32 @@
         <div id="app"></div>
         <script type="module" src="/src/main.ts"></script>
         <script>
-            // window.onload = function () {
-            //     // 禁用双指放大
-            //     document.addEventListener("touchstart", function (event) {
-            //         if (event.touches.length > 1) {
-            //             event.preventDefault();
-            //         }
-            //     });
-            //     // 禁用双击放大
-            //     let lastTouchEnd = 0;
-            //     document.addEventListener(
-            //         "touchend",
-            //         function (event) {
-            //             const now = new Date().getTime();
-            //             if (now - lastTouchEnd <= 300) {
-            //                 event.preventDefault();
-            //             }
-            //             lastTouchEnd = now;
-            //         },
-            //         false
-            //     );
-            //     document.addEventListener("gesturestart", function (event) {
-            //         event.preventDefault();
-            //     });
-            // };
+            document.documentElement.addEventListener(
+                "touchstart",
+                function (event) {
+                    if (event.touches.length > 1) {
+                        event.preventDefault();
+                    }
+                },
+                false
+            );
+
+            var lastTouchEnd = 0;
+            document.documentElement.addEventListener(
+                "touchend",
+                function (event) {
+                    var now = Date.now();
+                    if (now - lastTouchEnd <= 300) {
+                        event.preventDefault();
+                    }
+                    lastTouchEnd = now;
+                },
+                false
+            );
+
+            document.addEventListener("gesturestart", function (event) {
+                event.preventDefault();
+            });
         </script>
     </body>
 </html>
