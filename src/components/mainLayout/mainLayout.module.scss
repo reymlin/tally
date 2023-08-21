@@ -17,15 +17,15 @@
     padding-left: 25px;
 }
 .imgBox {
-    width: 27px;
-    height: 27px;
+    width: 24px;
+    height: 24px;
     overflow: hidden;
     img {
         width: 100%;
     }
 }
 .titleBox {
-    font-size: 24px;
+    font-size: 22px;
     margin-left: 22px;
 }
 ul {
@@ -34,6 +34,7 @@ ul {
     justify-content: space-between;
     background: var(--welcom-bg-end);
     color: var(--button-text);
+    box-sizing: border-box;
     li {
         list-style: none;
         flex: 1;
