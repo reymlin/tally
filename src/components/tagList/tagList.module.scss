@@ -3,6 +3,7 @@
     flex: 1;
     display: flex;
     flex-wrap: wrap;
+    padding-top: 4px;
 }
 .itemTag {
     width: 20vw;
@@ -14,15 +15,15 @@
     padding-bottom: 6px;
 
     p {
-        width: 75%;
-        height: 70%;
+        width: 62%;
+        height: 58%;
         background: #efefef;
         border-radius: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
         img {
-            width: 45%;
+            width: 40%;
         }
     }
 }
@@ -38,9 +39,9 @@
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            width: 5px;
+            width: 4px;
             border-radius: 4px;
-            height: 60%;
+            height: 55%;
             background: var(--theme-color);
         }
         &::before {
@@ -51,9 +52,9 @@
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            width: 60%;
+            width: 55%;
             border-radius: 4px;
-            height: 5px;
+            height: 4px;
             background: var(--theme-color);
         }
     }
