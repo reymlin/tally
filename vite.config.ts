@@ -2,10 +2,12 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import path from "path"; // 解决报错：pnpm install @types/node -D
+
 export default defineConfig({
     base: "./",
     server: {
-        host: true
+        host: true,
+        port: 3000
     },
     plugins: [
         vue(),

@@ -2,9 +2,10 @@ import { defineComponent, ref, watchEffect } from "vue";
 import S from "./numKeyboard.module.scss";
 import rili from "@/assets/createImgs/rili.png";
 import dayjs from "dayjs";
-
+import { Calendar } from "vant";
 export const NumKeyboard = defineComponent({
     setup(props, context: any) {
+        const vanCalendar = Calendar;
         const inputClick = (value: number | string) => {
             inputValue.value += value;
         };
@@ -59,7 +60,7 @@ export const NumKeyboard = defineComponent({
 
         const inputValue = ref("");
 
-        const curDay = dayjs().format("YYYY-MM-DD");
+        const curDay = ref(dayjs().format("YYYY-MM-DD"));
 
         const onClear = () => {
             inputValue.value = "";
@@ -67,6 +68,18 @@ export const NumKeyboard = defineComponent({
 
         const onSubmit = () => {
             onClear();
+        };
+
+        const visibleCalendar = ref(false);
+
+        const clickDay = () => {
+            visibleCalendar.value = true;
+        };
+
+        // 关闭日历组件
+        const closeCalendar = (value: Date) => {
+            visibleCalendar.value = false;
+            curDay.value = dayjs(value).format("YYYY-MM-DD");
         };
 
         // 格式化用户输入的值
@@ -91,15 +104,20 @@ export const NumKeyboard = defineComponent({
 
         return () => (
             <div class={S.numKeyboard}>
+                <vanCalendar show={visibleCalendar.value} color="#ee0a24" show-confirm={false} onConfirm={closeCalendar} />
+
                 <div class={S.BoardTop}>
                     <section>
                         <img src={rili} alt="" />
-                        <span class={S.curday}>{curDay}</span>
+                        <span onClick={clickDay} class={S.curday}>
+                            {curDay.value}
+                        </span>
                     </section>
                     <section>
                         <input type="text" v-model={inputValue.value} disabled />
                     </section>
                 </div>
+
                 <div class={S.digitWrapper}>
                     <div class={S.numberBox}>
                         {buttons.map((item) => {
