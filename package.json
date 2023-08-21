@@ -14,6 +14,7 @@
         "dayjs": "^1.11.9",
         "lib-flexible": "^0.3.2",
         "pinia": "2.0.32",
+        "postcss-pxtorem": "^6.0.0",
         "vant": "^4.6.6",
         "vue": "3.2.45",
         "vue-router": "4"

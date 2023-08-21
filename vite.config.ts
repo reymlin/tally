@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import path from "path"; // 解决报错：pnpm install @types/node -D
-
+import postCssPxToRem from "postcss-pxtorem";
 export default defineConfig({
     base: "./",
     server: {
@@ -22,6 +22,16 @@ export default defineConfig({
         extensions: [".tsx", ".jsx", ".js", ".ts"],
         alias: {
             "@": path.resolve(__dirname, "src")
+        }
+    },
+    css: {
+        postcss: {
+            plugins: [
+                postCssPxToRem({
+                    rootValue: 42.8, // 1rem的大小
+                    propList: ["*"] // 需要转换的属性，这里选择全部都进行转换
+                })
+            ]
         }
     }
 });

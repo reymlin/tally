@@ -13,6 +13,9 @@ dependencies:
   pinia:
     specifier: 2.0.32
     version: 2.0.32(typescript@4.9.3)(vue@3.2.45)
+  postcss-pxtorem:
+    specifier: ^6.0.0
+    version: 6.0.0(postcss@8.4.20)
   vant:
     specifier: ^4.6.6
     version: 4.6.6(vue@3.2.45)
@@ -1186,6 +1189,14 @@ packages:
     dependencies:
       postcss: 5.2.18
     dev: true
+
+  /postcss-pxtorem@6.0.0(postcss@8.4.20):
+    resolution: {integrity: sha512-ZRXrD7MLLjLk2RNGV6UA4f5Y7gy+a/j1EqjAfp9NdcNYVjUMvg5HTYduTjSkKBkRkfqbg/iKrjMO70V4g1LZeg==}
+    peerDependencies:
+      postcss: ^8.0.0
+    dependencies:
+      postcss: 8.4.20
+    dev: false
 
   /postcss-value-parser@4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}

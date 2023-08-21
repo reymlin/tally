@@ -104,7 +104,15 @@ export const NumKeyboard = defineComponent({
 
         return () => (
             <div class={S.numKeyboard}>
-                <vanCalendar show={visibleCalendar.value} color="#ee0a24" show-confirm={false} onConfirm={closeCalendar} />
+                <vanCalendar
+                    show={visibleCalendar.value}
+                    color="#ee0a24"
+                    onClose={() => {
+                        visibleCalendar.value = false;
+                    }}
+                    show-confirm={false}
+                    onConfirm={closeCalendar}
+                />
 
                 <div class={S.BoardTop}>
                     <section>
