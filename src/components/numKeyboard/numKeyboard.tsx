@@ -9,8 +9,8 @@ export const NumKeyboard = defineComponent({
         const vanCalendar = Calendar;
         const inputClick = (value: number | string) => {
             inputValue.value += value;
-            const ele = document.getElementById("videoEle") as HTMLVideoElement;
-            ele.play();
+            // const ele = document.getElementById("videoEle") as HTMLVideoElement;
+            // ele.play();
         };
 
         const buttons = [
