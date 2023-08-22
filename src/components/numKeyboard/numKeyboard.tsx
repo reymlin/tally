@@ -3,11 +3,14 @@ import S from "./numKeyboard.module.scss";
 import rili from "@/assets/createImgs/rili.png";
 import dayjs from "dayjs";
 import { Calendar } from "vant";
+import mp3 from "@/assets/number.mp3";
 export const NumKeyboard = defineComponent({
     setup(props, context: any) {
         const vanCalendar = Calendar;
         const inputClick = (value: number | string) => {
             inputValue.value += value;
+            const ele = document.getElementById("videoEle") as HTMLVideoElement;
+            ele.play();
         };
 
         const buttons = [
@@ -104,6 +107,7 @@ export const NumKeyboard = defineComponent({
 
         return () => (
             <div class={S.numKeyboard}>
+                <video id="videoEle" class={S.video} src={mp3} x5-playsinline="true" playsinline="true" webkit-playsinline="true"></video>
                 <vanCalendar
                     show={visibleCalendar.value}
                     color="#ee0a24"
