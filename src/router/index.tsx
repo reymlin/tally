@@ -9,6 +9,7 @@ import { Welcom3 } from "../views/welcom/welcom3";
 import { Welcom4 } from "../views/welcom/welcom4";
 import { Start } from "../views/start/index";
 import { CreateNote } from "../views/create-note/index";
+import { CreateTag } from "../views/create-tag/index";
 const Routes = [
     { path: "/login", component: Login },
     { path: "/404", component: Page404 },
@@ -50,6 +51,10 @@ const Routes = [
     {
         path: "/CreateNote",
         component: CreateNote
+    },
+    {
+        path: "/CreateTag",
+        component: CreateTag
     }
 ];
 

@@ -1,0 +1,133 @@
+.newTagbody {
+    padding: 34px 16px 66px 16px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+// 标签名区域
+.tagNameBox {
+    box-sizing: border-box;
+    p {
+        color: var(--font-color4);
+        font-size: 18px;
+    }
+    input {
+        margin-top: 10px;
+        width: 100%;
+        height: 48px;
+        background: #ffffff;
+        box-sizing: border-box;
+        border: 1px solid var(--theme-color);
+        border-radius: 8px;
+        box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.16);
+        font-size: 18px;
+        font-weight: 350;
+        letter-spacing: 0em;
+        padding: 2px 16px;
+        display: flex;
+        align-items: center;
+    }
+    .inputErrMsg {
+        margin-top: 8px;
+        font-size: 14px;
+        font-weight: 350;
+        line-height: 14px;
+        letter-spacing: 0em;
+        color: var(--error-color);
+    }
+}
+// 表情区域
+.emojiBox {
+    flex: 1;
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    p {
+        color: var(--font-color4);
+        font-size: 18px;
+    }
+    .emojiTable {
+        flex: 1;
+        max-height: 500px;
+        border-radius: 8px;
+        background: #ffffff;
+        box-sizing: border-box;
+        margin-top: 10px;
+        border: 1px solid var(--theme-color);
+        box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.16);
+        overflow: hidden;
+        .emojiTableNav {
+            width: 100%;
+            height: 44px;
+            display: flex;
+            overflow-x: auto;
+            overflow-y: hidden;
+            overflow-x: auto;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            span {
+                flex-shrink: 0;
+                font-size: 14px;
+                font-weight: 350;
+                letter-spacing: 0em;
+                color: #999999;
+                line-height: 43px;
+                padding: 0 16px;
+            }
+            .selectedNav {
+                font-size: 16px;
+                color: #333333;
+            }
+        }
+        .emojiTableList {
+            width: 100%;
+            height: calc(100% - 44px);
+            ul {
+                background: none;
+                display: grid;
+                grid-template-columns: repeat(10, 10%);
+                grid-column-gap: 0;
+                grid-auto-rows: 36px;
+                height: 100%;
+                overflow-y: auto;
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+                li {
+                    display: block;
+                    list-style: none;
+                    font-size: 22px;
+                    line-height: 22px;
+                }
+            }
+        }
+    }
+}
+// 提示信息区域
+.tipBox {
+    width: 100%;
+    height: 30px;
+    font-size: 16px;
+    font-weight: 350;
+    line-height: 16px;
+    letter-spacing: 0em;
+    display: flex;
+    justify-content: center;
+    margin-top: 26px;
+    margin-bottom: 37px;
+}
+// 底部按钮区域
+.footerButtonBox {
+    width: 100%;
+    .bottomBtn {
+        width: 100%;
+        font-size: 20px;
+        height: 48px;
+        padding: 0 !important;
+    }
+}
