@@ -24,7 +24,7 @@
         //     transform: translate(-50%, -50%);
         // }
         &:active {
-            box-shadow: inset 0 0 2px 1px hsl(48, 100%, 20%);
+            box-shadow: inset 0 0 2px 1px #9b81b7;
             color: var(--input-color);
             // span {
             //     width: 1%;
@@ -38,6 +38,14 @@
     .video {
         width: 0;
         height: 0;
+    }
+    .submitBtn {
+        background: var(--button-bgc);
+        color: var(--font-color1);
+        &:active {
+            box-shadow: inset 0 0 2px 1px hsl(48, 36%, 83%);
+            color: var(--input-color);
+        }
     }
 }
 .BoardTop {

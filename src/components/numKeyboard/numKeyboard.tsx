@@ -142,7 +142,7 @@ export const NumKeyboard = defineComponent({
                     </div>
                     <div class={S.rightBox}>
                         <button onClick={onClear}>清空</button>
-                        <button onClick={onSubmit}>提交</button>
+                        <button class={S.submitBtn} onClick={onSubmit}>提交</button>
                     </div>
                 </div>
             </div>
