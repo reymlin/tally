@@ -3,7 +3,6 @@ import S from "./numKeyboard.module.scss";
 import rili from "@/assets/createImgs/rili.png";
 import dayjs from "dayjs";
 import { Calendar } from "vant";
-import mp3 from "@/assets/number.mp3";
 export const NumKeyboard = defineComponent({
     setup(props, context: any) {
         const vanCalendar = Calendar;
@@ -107,7 +106,6 @@ export const NumKeyboard = defineComponent({
 
         return () => (
             <div class={S.numKeyboard}>
-                <video id="videoEle" class={S.video} src={mp3} x5-playsinline="true" playsinline="true" webkit-playsinline="true"></video>
                 <vanCalendar
                     show={visibleCalendar.value}
                     color="#ee0a24"
@@ -133,16 +131,31 @@ export const NumKeyboard = defineComponent({
                 <div class={S.digitWrapper}>
                     <div class={S.numberBox}>
                         {buttons.map((item) => {
-                            return <button onClick={item.onclick}>{item.label}</button>;
+                            return (
+                                <button onClick={item.onclick}>
+                                    {item.label}
+                                    <span></span>
+                                </button>
+                            );
                         })}
                         <div class={S.digitFooter}>
-                            <button onClick={() => inputClick(0)}>0</button>
-                            <button onClick={() => inputClick(".")}>.</button>
+                            <button onClick={() => inputClick(0)}>
+                                0<span></span>
+                            </button>
+                            <button onClick={() => inputClick(".")}>
+                                .<span></span>
+                            </button>
                         </div>
                     </div>
                     <div class={S.rightBox}>
-                        <button onClick={onClear}>清空</button>
-                        <button class={S.submitBtn} onClick={onSubmit}>提交</button>
+                        <button onClick={onClear}>
+                            清空
+                            <span></span>
+                        </button>
+                        <button class={S.submitBtn} onClick={onSubmit}>
+                            提交
+                            <span></span>
+                        </button>
                     </div>
                 </div>
             </div>
