@@ -15,20 +15,22 @@
         position: relative;
         overflow: hidden;
         span {
-            width: 0;
-            height: 0;
             position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
+            left: 0;
+            top: 0;
+            background: var(--button-active-bgc);
+            // transform: translate(-50%, -50%);
         }
         &:active {
             span {
-                width: 1%;
-                height: 1%;
+                width: 4px;
+                height: 4px;
                 border-radius: 50%;
-                animation: animate 2s linear infinite;
-                background: var(--button-active-bgc);
+                // width: 4px;
+                // height: 4px;
+                // border-radius: 50%;
+                animation: animate 2s;
+                // background: var(--button-active-bgc);
             }
         }
     }
@@ -111,21 +113,29 @@
     }
 }
 
+// @keyframes animate {
+//     0% {
+//         transform: scale(10);
+//         opacity: 1;
+//     }
+
+//     50% {
+//         width: 50%;
+//         height: 50%;
+//         transform: scale(50);
+//         opacity: 0.5;
+//     }
+
+//     100% {
+//         transform: scale(100);
+//         opacity: 0;
+//     }
+// }
 @keyframes animate {
     0% {
-        transform: scale(10);
-        opacity: 1;
-    }
-
-    50% {
-        width: 50%;
-        height: 50%;
-        transform: scale(50);
-        opacity: 0.5;
-    }
-
-    100% {
         transform: scale(100);
-        opacity: 0;
+    }
+    100% {
+        transform: scale(1000);
     }
 }
