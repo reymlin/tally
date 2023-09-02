@@ -6,6 +6,11 @@ interface Props {
 }
 export const Button = defineComponent<Props>({
     setup(props, context) {
-        return () => <button class={S.button}>{context.slots.default?.()}</button>;
+        return () => (
+            <button class={S.button}>
+                {context.slots.default?.()}
+                <span></span>
+            </button>
+        );
     }
 });

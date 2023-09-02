@@ -21,7 +21,6 @@ export const MianLayout = defineComponent({
     },
     setup(props, context: any) {
         const { slots } = context;
-
         return () => (
             <div class={S.mainBody}>
                 <div class={S.topBar}>
