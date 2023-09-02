@@ -1,5 +1,6 @@
 import { defineComponent, PropType } from "vue";
 import S from "./tagList.module.scss";
+import { useRouter } from "vue-router";
 export const TagList = defineComponent({
     props: {
         tagType: {
@@ -13,9 +14,15 @@ export const TagList = defineComponent({
     },
 
     setup(props, context) {
+        const router = useRouter();
+
+        const addBtnClick = () => {
+            router.push("/CreateTag");
+        };
+
         return () => (
             <div class={S.taglist}>
-                <div class={S.itemTagAdd}>
+                <div class={S.itemTagAdd} onClick={addBtnClick}>
                     <p></p>
                     <span></span>
                 </div>
