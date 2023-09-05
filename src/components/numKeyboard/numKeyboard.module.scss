@@ -19,18 +19,13 @@
             left: 0;
             top: 0;
             background: var(--button-active-bgc);
-            // transform: translate(-50%, -50%);
         }
         &:active {
             span {
                 width: 4px;
                 height: 4px;
                 border-radius: 50%;
-                // width: 4px;
-                // height: 4px;
-                // border-radius: 50%;
                 animation: animate 2s;
-                // background: var(--button-active-bgc);
             }
         }
     }

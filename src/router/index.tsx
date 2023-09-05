@@ -10,6 +10,7 @@ import { Welcom4 } from "../views/welcom/welcom4";
 import { Start } from "../views/start/index";
 import { CreateNote } from "../views/create-note/index";
 import { CreateTag } from "../views/create-tag/index";
+import { TagDetail } from "../views/tag-detail/index";
 const Routes = [
     { path: "/login", component: Login },
     { path: "/404", component: Page404 },
@@ -49,12 +50,16 @@ const Routes = [
         component: Start
     },
     {
-        path: "/CreateNote",
+        path: "/CreateNote", // 记一笔
         component: CreateNote
     },
     {
-        path: "/CreateTag",
+        path: "/CreateTag", // 新建标签
         component: CreateTag
+    },
+    {
+        path: "/tagDetail", // 标签详情
+        component: TagDetail
     }
 ];
 
