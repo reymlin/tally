@@ -12,6 +12,7 @@ import { CreateNote } from "../views/create-note/index";
 import { CreateTag } from "../views/create-tag/index";
 import { TagDetail } from "../views/tag-detail/index";
 import { Bill } from "../views/Bill/index";
+import { Statics } from "../views/statics/index";
 const Routes = [
     { path: "/login", component: Login },
     { path: "/404", component: Page404 },
@@ -65,6 +66,10 @@ const Routes = [
     {
         path: "/bill", // 账单
         component: Bill
+    },
+    {
+        path: "/statics",
+        component: Statics
     }
 ];
 
