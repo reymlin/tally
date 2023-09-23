@@ -1,16 +1,17 @@
 import S from "./bill.module.scss";
 import { List } from "./components/list";
-import returnImg from "@/assets/imgs/return.png";
+import menuImg from "@/assets/imgs/menu.png";
 import { defineComponent, ref } from "vue";
 import { MianLayout } from "@/components/mainLayout/mainLayout";
-
+import { useRouter } from "vue-router";
 export const Bill = defineComponent({
-    setup() {
+    setup(props, context) {
+        const router = useRouter();
         const onBack = () => {
-            // router.replace("/CreateNote");
+            router.replace("/start");
         };
 
-        const tabs = [{ name: "本月" }, { name: "上月" }, { name: "今年" }, { name: "自定义时间" }];
+        const tabs = [{ name: "本月" }, { name: "上月" }, { name: "今年" }];
 
         const selectedValue = ref("本月");
 
@@ -21,12 +22,12 @@ export const Bill = defineComponent({
             <>
                 <MianLayout v-model:selectedValue={selectedValue.value} v-model:changeSelectedValue={changeSelectedValue} v-model:tabs={tabs}>
                     {{
-                        leftImg: () => <img src={returnImg} onClick={onBack} />,
+                        leftImg: () => <img src={menuImg} onClick={onBack} />,
                         title: () => "山竹记账",
                         main: () => (
                             <div class={S.billPageBody}>
                                 {" "}
-                                <List></List>
+                                <List v-model:selectedValue={selectedValue.value}></List>
                             </div>
                         )
                     }}
