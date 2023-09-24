@@ -3,6 +3,8 @@ import menuImg from "@/assets/imgs/menu.png";
 import { defineComponent, ref } from "vue";
 import { MianLayout } from "@/components/mainLayout/mainLayout";
 import { useRouter } from "vue-router";
+import { LineChart } from "./components/line-chart";
+import { PieChart } from "./components/pie-charts";
 export const Statics = defineComponent({
     setup(props, context) {
         const router = useRouter();
@@ -17,13 +19,36 @@ export const Statics = defineComponent({
         const changeSelectedValue = (value: string) => {
             selectedValue.value = value;
         };
+
+        const selectType = ref("支出");
+
+        const changeType = (type: string) => {
+            selectType.value = type;
+        };
         return () => (
             <>
                 <MianLayout v-model:selectedValue={selectedValue.value} v-model:changeSelectedValue={changeSelectedValue} v-model:tabs={tabs}>
                     {{
                         leftImg: () => <img src={menuImg} onClick={onBack} />,
                         title: () => "山竹记账",
-                        main: () => <div class={S.staticsBosy}></div>
+                        main: () => (
+                            <div class={S.staticsBosy}>
+                                <div class={S.typeSelect}>
+                                    <label>类型</label>
+                                    <section>
+                                        <p onClick={() => changeType("支出")} class={selectType.value === "支出" ? S.selectP : ""}>
+                                            支出
+                                        </p>
+                                        <p onClick={() => changeType("收入")} class={selectType.value === "收入" ? S.selectP : ""}>
+                                            收入
+                                        </p>
+                                    </section>
+                                </div>
+
+                                <LineChart />
+                                <PieChart />
+                            </div>
+                        )
                     }}
                 </MianLayout>
             </>

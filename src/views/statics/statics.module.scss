@@ -6,3 +6,30 @@
     flex-direction: column;
     overflow: hidden;
 }
+.typeSelect {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    label {
+        font-size: 16px;
+        margin-right: 8px;
+    }
+    section {
+        display: flex;
+        align-items: center;
+        background: #efefef;
+        border-radius: 4px;
+        p {
+            height: 32px;
+            width: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+        }
+        .selectP {
+            background: #8f4cd7;
+            color: var(--font-color1);
+        }
+    }
+}

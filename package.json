@@ -12,6 +12,7 @@
     "dependencies": {
         "classnames": "2.3.2",
         "dayjs": "^1.11.9",
+        "echarts": "^5.4.3",
         "lib-flexible": "^0.3.2",
         "pinia": "2.0.32",
         "postcss-pxtorem": "^6.0.0",
