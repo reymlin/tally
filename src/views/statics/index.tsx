@@ -45,8 +45,8 @@ export const Statics = defineComponent({
                                     </section>
                                 </div>
 
-                                <LineChart />
-                                <PieChart />
+                                <LineChart v-model:value={selectType.value} v-model:dateType={selectedValue.value} />
+                                <PieChart v-model:value={selectType.value} v-model:dateType={selectedValue.value} />
                             </div>
                         )
                     }}
