@@ -90,7 +90,7 @@ export const NumKeyboard = defineComponent({
                 inputValue.value = "";
             }
             // 判断是否出现多个小数点，如果出现，则替换为空字符
-            let strs = inputValue.value.split(".");
+            let strs = inputValue.value?.split(".") || "";
             if (strs.length > 2) {
                 inputValue.value = strs[0] + "." + strs[1];
             }

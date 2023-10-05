@@ -1,5 +1,4 @@
 import S from "./welcom.module.scss";
-import classNames from "classnames";
 import logo from "../../assets/logo.svg";
 import { WelcomStore } from "../../store/welcom";
 import { defineComponent, Transition, VNode, ref } from "vue";
@@ -11,7 +10,7 @@ export const WelcomIndex = defineComponent({
         const storeWelcom = WelcomStore();
 
         const onJump = () => {
-            router.push("/start");
+            router.replace("/start");
         };
 
         const toNextPage = () => {
@@ -33,25 +32,24 @@ export const WelcomIndex = defineComponent({
             }
         };
 
-        let fromClassName: any = null;
-        let leveToClassName: any = null;
-        let leaveActiveClassName: any = null;
+        let fromClassName = ref<string>("");
+        let leveToClassName = ref<string>("");
+        let leaveActiveClassName = ref<string>("");
 
         // 订阅Pinia仓库中的State状态
         const subscribe = storeWelcom.$subscribe(
             (state: any) => {
                 let _direc: string = state?.payload?.slide_direc || "";
-
+                console.log("_direc", _direc);
                 if (_direc === "left") {
-                    fromClassName = classNames(S.enter_from_right);
-                    leveToClassName = classNames(S.leave_to_right);
-                    leaveActiveClassName = classNames(S.leave_active_right);
+                    fromClassName.value = S.enter_from_right;
+                    leveToClassName.value = S.leave_to_right;
+                    leaveActiveClassName.value = S.leave_active_right;
                 } else if (_direc === "right") {
-                    fromClassName = classNames(S.enter_from_left);
-                    leveToClassName = classNames(S.leave_to_left);
-                    leaveActiveClassName = classNames(S.leave_active_left);
+                    fromClassName.value = S.enter_from_left;
+                    leveToClassName.value = S.leave_to_left;
+                    leaveActiveClassName.value = S.leave_active_left;
                 }
-
                 //detached值默认false，如果设置detached值为 true 时，即使所在组件被卸载，订阅依然在生效
             },
             { detached: false }
@@ -69,7 +67,12 @@ export const WelcomIndex = defineComponent({
                 <div class={S.wrapper}>
                     <RouterView>
                         {({ Component: X, route: R }: { Component: VNode; route: RouteLocationNormalizedLoaded }) => (
-                            <Transition enterActiveClass={S.enter_active} enterFromClass={fromClassName} leaveToClass={leveToClassName} leaveActiveClass={leaveActiveClassName}>
+                            <Transition
+                                enterActiveClass={S.enter_active}
+                                enterFromClass={fromClassName.value}
+                                leaveToClass={leveToClassName.value}
+                                leaveActiveClass={leaveActiveClassName.value}
+                            >
                                 {X}
                             </Transition>
                         )}
