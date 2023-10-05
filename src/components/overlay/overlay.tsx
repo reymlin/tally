@@ -4,6 +4,7 @@ import chartImg from "@/assets/imgs/chart.png";
 import exportImg from "@/assets/imgs/export.png";
 import fenleiImg from "@/assets/imgs/fenlei.png";
 import tixingImg from "@/assets/imgs/tixing.png";
+import { useRouter } from "vue-router";
 export const Overlay = defineComponent({
     props: {
         onClose: {
@@ -12,10 +13,17 @@ export const Overlay = defineComponent({
     },
 
     setup(props, context) {
+        const router = useRouter();
+
         const { slots } = context;
 
         const onClose = () => {
             props.onClose?.();
+        };
+
+        const onChangeRouter = (path: string) => {
+            props.onClose?.();
+            router.replace(path);
         };
         return () => (
             <>
@@ -25,25 +33,25 @@ export const Overlay = defineComponent({
                         <p class={S.subtitle}>点击这里登录</p>
                     </section>
                     <section class={S.navList}>
-                        <div>
+                        <div onClick={() => onChangeRouter("/statics")}>
                             <p>
                                 <img src={chartImg} alt="" />
                             </p>
                             <span>统计图表</span>
                         </div>
-                        <div>
+                        <div onClick={() => onChangeRouter("/bill")}>
                             <p>
                                 <img src={exportImg} alt="" />
                             </p>
                             <span>导出数据</span>
                         </div>
-                        <div>
+                        <div onClick={() => onChangeRouter("/CreateTag")}>
                             <p>
                                 <img src={fenleiImg} alt="" />
                             </p>
                             <span>自定义分类</span>
                         </div>
-                        <div>
+                        <div onClick={() => onChangeRouter("/CreateNote")}>
                             <p>
                                 <img src={tixingImg} alt="" />
                             </p>

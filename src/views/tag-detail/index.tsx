@@ -104,9 +104,7 @@ export const TagDetail = defineComponent({
                                 <div class={S.emojiBox}>
                                     <p>
                                         符号 <span>{userSelectEmo.value} </span>
-                                        <span class={S.inputErrMsg} v-if={emoError.value}>
-                                            {emoError.value}
-                                        </span>
+                                        {emoError.value ? <span class={S.inputErrMsg}>{emoError.value}</span> : ""}
                                     </p>
                                     <div class={S.emojiTable}>
                                         <div class={S.emojiTableNav}>
