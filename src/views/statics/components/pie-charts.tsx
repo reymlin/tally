@@ -49,10 +49,14 @@ export const PieChart = defineComponent({
             };
         };
 
+        const myChart = ref<any>(null);
+
         // 初始化echarts
         const initChart = () => {
-            const myChart = echarts.init(document.getElementById("pieChar"));
-            myChart.setOption(option.value);
+            if (!myChart.value) {
+                myChart.value = echarts.init(document.getElementById("pieChar"));
+            }
+            myChart.value.setOption(option.value);
         };
 
         // 获取数据

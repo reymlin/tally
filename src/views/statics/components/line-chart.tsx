@@ -41,6 +41,8 @@ export const LineChart = defineComponent({
             };
         };
 
+        const myChart = ref<any>(null);
+
         watch(
             () => [props.value, props.dateType],
             (newVal) => {
@@ -79,8 +81,10 @@ export const LineChart = defineComponent({
 
         // 初始化echarts
         const initChart = () => {
-            const myChart = echarts.init(document.getElementById("lineChar"));
-            myChart.setOption(option.value);
+            if (!myChart.value) {
+                myChart.value = echarts.init(document.getElementById("lineChar"));
+            }
+            myChart.value.setOption(option.value);
         };
 
         onMounted(() => {});
