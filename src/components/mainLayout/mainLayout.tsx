@@ -21,10 +21,17 @@ export const MianLayout = defineComponent({
     },
     setup(props, context: any) {
         const { slots } = context;
+
+        // 展示导航悬浮层
+        const showOverlay = () => {
+            console.log("showOverlay");
+        };
         return () => (
             <div class={S.mainBody}>
                 <div class={S.topBar}>
-                    <div class={S.imgBox}>{slots?.leftImg()}</div>
+                    <div class={S.imgBox} onClick={showOverlay}>
+                        {slots?.leftImg()}
+                    </div>
                     <div class={S.titleBox}>{slots?.title()}</div>
                 </div>
                 <ul v-if={props.tabs.length}>

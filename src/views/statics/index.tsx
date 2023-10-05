@@ -8,9 +8,6 @@ import { PieChart } from "./components/pie-charts";
 export const Statics = defineComponent({
     setup(props, context) {
         const router = useRouter();
-        const onBack = () => {
-            router.replace("/start");
-        };
 
         const tabs = [{ name: "本月" }, { name: "上月" }, { name: "今年" }];
 
@@ -29,7 +26,7 @@ export const Statics = defineComponent({
             <>
                 <MianLayout v-model:selectedValue={selectedValue.value} v-model:changeSelectedValue={changeSelectedValue} v-model:tabs={tabs}>
                     {{
-                        leftImg: () => <img src={menuImg} onClick={onBack} />,
+                        leftImg: () => <img src={menuImg} />,
                         title: () => "山竹记账",
                         main: () => (
                             <div class={S.staticsBosy}>
