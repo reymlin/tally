@@ -26,7 +26,8 @@ export const Overlay = defineComponent({
             router.replace(path);
         };
         return () => (
-            <>
+            <div class={S.overlayCom}>
+                {" "}
                 <div class={S.leftbox}>
                     <section class={S.overlayTop}>
                         <p class={S.userName}>未登录用户</p>
@@ -60,7 +61,7 @@ export const Overlay = defineComponent({
                     </section>
                 </div>
                 <div class={S.rightMask} onClick={onClose}></div>
-            </>
+            </div>
         );
     }
 });
