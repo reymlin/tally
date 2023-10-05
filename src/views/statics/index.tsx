@@ -22,6 +22,7 @@ export const Statics = defineComponent({
         const changeType = (type: string) => {
             selectType.value = type;
         };
+
         return () => (
             <>
                 <MianLayout v-model:selectedValue={selectedValue.value} v-model:changeSelectedValue={changeSelectedValue} v-model:tabs={tabs}>
