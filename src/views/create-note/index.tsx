@@ -1,6 +1,6 @@
 import { defineComponent, ref } from "vue";
 import { MianLayout } from "@/components/mainLayout/mainLayout";
-import returnImg from "@/assets/imgs/return.png";
+import menuImg from "@/assets/imgs/menu.png";
 import { useRouter } from "vue-router";
 import { TagList } from "@/components/tagList/tagList";
 import { NumKeyboard } from "@/components/numKeyboard/numKeyboard";
@@ -66,7 +66,7 @@ export const CreateNote = defineComponent({
             <>
                 <MianLayout v-model:selectedValue={selectedValue.value} v-model:changeSelectedValue={changeSelectedValue} v-model:tabs={tabs}>
                     {{
-                        leftImg: () => <img src={returnImg} onClick={onBack} />,
+                        leftImg: () => <img src={menuImg} />,
                         title: () => "记一笔",
                         main: () => (
                             <div class={S.createNoteContent}>
